@@ -1,10 +1,13 @@
-# Use Maven as the base image
-FROM gradle:7.3.3-jdk11
+# Use Tomcat as the base image
+FROM tomcat:9.0-jdk11
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /usr/local/tomcat/webapps/
 
-COPY ./target/helloworld-1.0.war /app/
+# Copy the WAR file into the Tomcat webapps directory
+COPY ./target/helloworld-1.0.war ./helloworld.war
 
-# Command to run the Java application
-CMD ["java", "-war", "target/helloworld-1.0.war"]
+# Expose port 8080
+EXPOSE 8080
+
+# The default command to run Tomcat is already set in the base image
