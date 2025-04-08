@@ -6,6 +6,10 @@ plugins {
     `java-library`
     `maven-publish`
 }
+group = "helloworld"
+version = "1.0-SNAPSHOT"
+description = "Hello world sample web app"
+java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenLocal()
@@ -18,10 +22,6 @@ dependencies {
     testImplementation(libs.junit.junit)
 }
 
-group = "helloworld"
-version = "1.0-SNAPSHOT"
-description = "Hello world sample web app"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications.create<MavenPublication>("maven") {
