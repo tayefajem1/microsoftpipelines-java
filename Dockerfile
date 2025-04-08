@@ -8,4 +8,4 @@ RUN gradle build
 FROM openjdk:11-jre-slim
 WORKDIR /app
 COPY --from=build /app/build/libs/helloworld-1.0-SNAPSHOT.war .
-CMD ["java", "-war", "helloworld-1.0-SNAPSHOT.war"]
+CMD ["java", "-jar", "helloworld-1.0-SNAPSHOT.jar"]
