@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM gradle:7.2-jdk11 AS build
+FROM gradle:8.13.0-jdk21 AS build
 WORKDIR /app
 COPY . .
 RUN gradle build
