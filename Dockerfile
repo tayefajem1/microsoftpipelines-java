@@ -1,6 +1,7 @@
 # Stage 1: Build the application
 FROM gradle:8.13.0-jdk21 AS build
 WORKDIR /app
+RUN helloworld-1.0-SNAPSHOT.war
 COPY . .
 RUN gradle build
 
