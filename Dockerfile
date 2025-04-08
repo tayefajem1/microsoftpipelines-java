@@ -7,5 +7,5 @@ RUN gradle build
 # Stage 2: Create the runtime image
 FROM openjdk:11-jre-slim
 WORKDIR /app
-COPY --from=build /app/build/libs/Enlistment-1.0-SNAPSHOT.jar .
-CMD ["java", "-war", "Enlistment-1.0-SNAPSHOT.jar"]
+COPY --from=build /app/build/libs/helloworld-1.0-SNAPSHOT.war .
+CMD ["java", "-war", "helloworld-1.0-SNAPSHOT.war"]
