@@ -8,4 +8,4 @@ RUN gradle build
 FROM openjdk:11-jre-slim
 WORKDIR /app
 COPY --from=build /app/build/libs/Enlistment-1.0-SNAPSHOT.jar .
-CMD ["java", "-jar", "Enlistment-1.0-SNAPSHOT.jar"]
+CMD ["java", "-war", "Enlistment-1.0-SNAPSHOT.jar"]
